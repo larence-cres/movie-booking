@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F09052</color>
+    <color name="colorPrimaryDark">#F09052</color>
+    <color name="colorAccent">#D2A373</color>
+
+    <color name="bg">#EDEDED</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="semiTransparent">#22FFFFFF</color>
+    <color name="semiTransparent1">#33000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="textColor">#1D1F31</color>
+    <color name="fadedTextColor">#AAA9B5</color>
+    <color name="cardBackground">#ffffff</color>
+    <color name="separator">#c7c7c7</color>
+    <!--<color name="selectedColor">#0532c6</color>-->
+
+    <color name="available">#AAA9B5</color>
+    <color name="booked">#1D1F31</color>
+    <color name="selected">#F09052</color>
+</resources>

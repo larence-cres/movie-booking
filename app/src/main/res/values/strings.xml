@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Movie Booking</string>
+
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="forgot_password"><u>Forgot Password</u></string>
+
+    <string-array name="NavMenu">
+        <item>Home</item>
+        <item>About Us</item>
+        <item>Arrival History</item>
+        <item>Complaint History</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.movie.booking"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion 
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kapt { 
+        generateStubs = true
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas".toString())
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "http://dl.bintray.com/kotlin/ktor"
+    }
+    maven { url 'https://jitpack.io' }
+    flatDir {
+        dirs "libs"
+    }
+}
+
+dependencies {
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.legacySuppport"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$rootProject.coordinatorLayoutVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.drawerlayout:drawerlayout:$rootProject.drawerLayoutVersion"
+    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
+    implementation "com.intuit.sdp:sdp-android:$rootProject.sdpVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.loggingVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxBindingVersion"
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    implementation 'com.android.support.constraint:constraint-layout:2.0.3'
+//    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    compileOnly "com.google.dagger:dagger:$rootProject.daggerVersion"
+    compileOnly "org.glassfish:javax.annotation:$rootProject.glassfishAnnotationVersion"
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    debugImplementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+
+//    implementation 'nz.bradcampbell:paperparcel:2.0.6'
+//    implementation 'nz.bradcampbell:paperparcel-kotlin:2.0.6' // Optional
+//    kapt 'nz.bradcampbell:paperparcel-compiler:2.0.6'
+//    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    compile 'jp.wasabeef:picasso-transformations:2.2.1'
+    
+//    implementation 'com.chaos.view:pinview:1.4.4'
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+//    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+//    implementation 'ca.antonious:materialdaypicker:0.7.3'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+
+    compile(name: "eSewaSdk", ext: "aar")
+
+    /* Testing Dependencies */
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+}

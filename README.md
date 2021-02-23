@@ -11,8 +11,8 @@ This is a mini project for booking movie.
     - Documentation in `https://developer.esewa.com.np/#/android`
 
 * Screenshots
-    ![Screenshot - 1](https://github.com/larence-cres/movie-booking/screenshots/1.png)
-    ![Screenshot - 2](https://github.com/larence-cres/movie-booking/screenshots/2.png)
-    ![Screenshot - 3](https://github.com/larence-cres/movie-booking/screenshots/3.png)
-    ![Screenshot - 4](https://github.com/larence-cres/movie-booking/screenshots/4.png)
-    ![Screenshot - 5](https://github.com/larence-cres/movie-booking/screenshots/5.png)
+    ![Screenshot - 1](https://github.com/larence-cres/movie-booking/blob/main/screenshots/1.png)
+    ![Screenshot - 2](https://github.com/larence-cres/movie-booking/blob/main/screenshots/2.png)
+    ![Screenshot - 3](https://github.com/larence-cres/movie-booking/blob/main/screenshots/3.png)
+    ![Screenshot - 4](https://github.com/larence-cres/movie-booking/blob/main/screenshots/4.png)
+    ![Screenshot - 5](https://github.com/larence-cres/movie-booking/blob/main/screenshots/5.png)
